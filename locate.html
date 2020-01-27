@@ -125,14 +125,6 @@ var searchLayer = L.geoJson().addTo(mymap);
 //... adding data in searchLayer ...
 L.map('mapid', { searchControl: {layer: searchLayer} });
 	
-require(["leaflet", "leafletSearch"],function(L, LeafletSearch) {
-
-	//... initialize leaflet map and dataLayer ...
-
-	map.addControl( new LeafletSearch({
-		layer: dataLayer
-	}) );
-});
 	
 </script>
 
