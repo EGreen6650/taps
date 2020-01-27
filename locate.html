@@ -121,9 +121,10 @@
 
 	mymap.on('click', onMapClick);
 
-var searchLayer = L.geoJson().addTo(mymap);
+var searchLayer = L.layerGroup().addTo(mymap);
 //... adding data in searchLayer ...
-L.map('mapid', { searchControl: {layer: searchLayer} });
+map.addControl( new L.Control.Search({layer: searchLayer}) );
+//searchLayer is a L.LayerGroup contains searched markers
 	
 	
 </script>
