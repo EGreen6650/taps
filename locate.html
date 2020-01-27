@@ -126,6 +126,14 @@ var searchLayer = L.layerGroup().addTo(mymap);
 mymap.addControl( new L.Control.Search({layer: searchLayer}) );
 //searchLayer is a L.LayerGroup contains searched markers
 	
+require(["leaflet", "leafletSearch"],function(L, LeafletSearch) {
+
+	//... initialize leaflet map and dataLayer ...
+
+	mymap.addControl( new LeafletSearch({
+		layer: dataLayer
+	}) );
+});
 	
 </script>
 
