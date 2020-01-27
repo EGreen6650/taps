@@ -121,7 +121,7 @@
 
 	mymap.on('click', onMapClick);
 
-var searchLayer = L.geoJson().addTo(map);
+var searchLayer = L.geoJson().addTo(mymap);
 //... adding data in searchLayer ...
 L.map('map', { searchControl: {layer: searchLayer} });
 	
