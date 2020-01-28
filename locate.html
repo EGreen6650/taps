@@ -121,7 +121,7 @@
 
 	mymap.on('click', onMapClick);
 
-var myGeoJsonLayer = L.geoJson(stations).addTo(map);
+var myGeoJsonLayer = L.geoJson(mapid).addTo(mymap);
 
 /// Patch Leaflet-search plugin.
 
@@ -226,7 +226,7 @@ L.Control.Search.include({
 
 var mySearchControl = new L.Control.Search({
   layer: myGeoJsonLayer,
-  propertyName: "STATION"
+  propertyName: "Centers"
 });
 
 map.addControl(mySearchControl);
