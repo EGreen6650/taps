@@ -121,19 +121,118 @@
 
 	mymap.on('click', onMapClick);
 
-var searchLayer = L.layerGroup().addTo(mymap);
-//... adding data in searchLayer ...
-mymap.addControl( new L.Control.Search({layer: searchLayer}) );
-//searchLayer is a L.LayerGroup contains searched markers
-	
-require(["leaflet", "leafletSearch"],function(L, LeafletSearch) {
+var myGeoJsonLayer = L.geoJson(stations).addTo(map);
 
-	//... initialize leaflet map and dataLayer ...
+/// Patch Leaflet-search plugin.
 
-	mymap.addControl( new LeafletSearch({
-		layer: dataLayer
-	}) );
+L.Control.Search.mergeOptions({
+	minLength: 0 // Show full list when no text is typed.
 });
+
+L.Control.Search.include({
+
+  _handleKeypress: function(e) {
+
+    switch (e.keyCode) {
+      case 27: //Esc
+        this.collapse();
+        break;
+      case 13: //Enter
+        if (this._countertips == 1)
+          this._handleArrowSelect(1);
+        this._handleSubmit(); //do search
+        break;
+      case 38: //Up
+        this._handleArrowSelect(-1);
+        break;
+      case 40: //Down
+        this._handleArrowSelect(1);
+        break;
+      case 37: //Left
+      case 39: //Right
+      case 16: //Shift
+      case 17: //Ctrl
+        //case 32://Space
+        break;
+      case 8: //backspace
+      case 46: //delete
+        this._autoTypeTmp = false;
+        if (this._collapsing) { // break only if collapsing.
+        	break;
+        }
+      default: //All keys
+
+        this._doSearch(); // see below
+    }
+  },
+
+  // externalized actual search process so that we can trigger it after control expansion.
+  _doSearch: function() {
+    if (this._input.value.length)
+      this._cancel.style.display = 'block';
+    else
+      this._cancel.style.display = 'none';
+
+    if (this._input.value.length >= this.options.minLength) {
+      var that = this;
+
+      clearTimeout(this.timerKeypress);
+      this.timerKeypress = setTimeout(function() {
+
+        that._fillRecordsCache();
+
+      }, this.options.delayType);
+    } else
+      this._hideTooltip();
+  },
+  
+  expand: function(toggle) {
+		toggle = typeof toggle === 'boolean' ? toggle : true;
+		this._input.style.display = 'block';
+		L.DomUtil.addClass(this._container, 'search-exp');
+		if ( toggle !== false ) {
+			this._input.focus();
+			this._map.on('dragstart click', this.collapse, this);
+		}
+		this.fire('search_expanded');
+    this._doSearch(); // Added to trigger a search when expanding the control.
+		return this;	
+	},
+  
+  collapse: function() {
+		this._hideTooltip();
+    this._collapsing = true; // added to prevent showing tooltip when collapsing
+		this.cancel();
+    this._collapsing = false; // added to prevent showing tooltip when collapsing
+		this._alert.style.display = 'none';
+		this._input.blur();
+		if(this.options.collapsed)
+		{
+			this._input.style.display = 'none';
+			this._cancel.style.display = 'none';			
+			L.DomUtil.removeClass(this._container, 'search-exp');		
+			if (this.options.hideMarkerOnCollapse) {
+				this._markerLoc.hide();
+			}
+			this._map.off('dragstart click', this.collapse, this);
+		}
+		this.fire('search_collapsed');
+		return this;
+	}
+
+});
+
+/// Instantiate the Search Control.
+
+var mySearchControl = new L.Control.Search({
+  layer: myGeoJsonLayer,
+  propertyName: "STATION"
+});
+
+map.addControl(mySearchControl);
+
+// DISCLAIMER: if the list of markers is too big, it will be cropped by the bottom of the map container!
+
 	
 </script>
 
