@@ -107,6 +107,7 @@
     L.marker([40.5295214,-89.0598508]).addTo(mymap)
 		.bindPopup("<b>Yuton Recycling Center</b><br />1528 Mabel Rd, Bloomington, IL").openPopup();
 
+
     
 
 	var popup = L.popup();
@@ -120,6 +121,9 @@
 
 	mymap.on('click', onMapClick);
 
+var myGeoJsonLayer = L.geoJson(mapid).addTo(mymap);
+
+/// Patch Leaflet-search plugin.
 
 L.Control.Search.mergeOptions({
 	minLength: 0 // Show full list when no text is typed.
@@ -253,7 +257,7 @@ text-allign: center;
 	<center>
 <table style=”width:100%”>
    <tr>
-	<th>       </th>
+	<th>Material</th>
 	<th>Curbside Pickup</th>
 	<th>Drop-off Location</th>
    </tr>
@@ -315,9 +319,9 @@ text-allign: center;
 </table>
 
 <h1>Bloomington, IL</h1>
-<table style=”width: 100%”>
+<table style="width: 100%">
    <tr>
-	<th>       </th>
+	<th>Material</th>
 	<th>Curbside Pickup</th>
 	<th>Drop-off Location</th>
    </tr>
@@ -377,12 +381,3 @@ text-allign: center;
 	<td>Clay Dooley Automotive</td>
    </tr>
 	</center>
-</table>
-</body>
-</html>
-
-	
-	
-
-</body>
-</html>
