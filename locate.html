@@ -46,7 +46,7 @@
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/streets-v11'
 	}).addTo(mymap);
-var data = {
+	
     L.marker([40.5008, -89.0237]).addTo(mymap)
 	         .bindPopup("<b>Midwest Fiber Recycling</b><br />422 White oak Road, Normal IL  61761").openPopup();
     
@@ -121,16 +121,7 @@ var data = {
 
 	mymap.on('click', onMapClick);
 
-map.addControl( controlSearch );
 
-	////////////populate map with markers from sample data
-	for(i in data) {
-		var title = data[i].title,	//value searched
-			loc = data[i].loc,		//position found
-			marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
-		marker.bindPopup('title: '+ title );
-		markersLayer.addLayer(marker);
-	}
 
 	
 </script>
