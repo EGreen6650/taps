@@ -66,7 +66,7 @@ L.Control.Gps = L.Control.extend({
 
 	onAdd: function (mymap) {
 
-		this._map = mymap;
+		this._map = map;
 
 		var container = L.DomUtil.create('div', 'leaflet-control-gps');
 
@@ -99,7 +99,7 @@ L.Control.Gps = L.Control.extend({
 	onRemove: function(mymap) {
 		this.deactivate();
 
-		mymap.off('locationfound', this._drawGps, this)
+		Map.off('locationfound', this._drawGps, this)
 		   .off('locationerror', this._errorGps, this);
 	},
 
