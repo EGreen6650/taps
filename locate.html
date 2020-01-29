@@ -122,13 +122,7 @@
 
 
 
-	var mymap = new L.Map('mapid', {
-		zoom: 12,
-		center: new L.latLng([41.575730,13.002411])
-	});
-
-	mymap.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));	//base layer
-
+	
 	var gps = new L.Control.Gps({
 		//autoActive:true,
 		autoCenter:true
