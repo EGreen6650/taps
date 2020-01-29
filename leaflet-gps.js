@@ -48,7 +48,7 @@ L.Control.Gps = L.Control.extend({
 			fillOpacity: 1
 		},
 		//accuracy: true,		//show accuracy Circle
-		position: 'bottomleft',
+		position: 'topleft',
 		transform: function(latlng) { return latlng },
 		//TODO add gpsLayer
 		//TODO timeout autoCenter
@@ -64,7 +64,7 @@ L.Control.Gps = L.Control.extend({
 		this._currentLocation = null;	//store last location
 	},
 
-	onAdd: function (mymap) {
+	onAdd: function (map) {
 
 		this._map = map;
 
@@ -96,10 +96,10 @@ L.Control.Gps = L.Control.extend({
 		return container;
 	},
 
-	onRemove: function(mymap) {
+	onRemove: function(map) {
 		this.deactivate();
 
-		Map.off('locationfound', this._drawGps, this)
+		map.off('locationfound', this._drawGps, this)
 		   .off('locationerror', this._errorGps, this);
 	},
 
@@ -221,4 +221,3 @@ L.control.gps = function (options) {
 return L.Control.Gps;
 
 });
-
