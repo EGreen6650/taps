@@ -36,7 +36,7 @@
 
 <div id="mapid" style="width: 100%; height: 450px;"></div>
 <script>
-	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+	var map = L.map('mapid').setView([51.505, -0.09], 13);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -44,66 +44,66 @@
 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/streets-v11'
-	}).addTo(mymap);
+	}).addTo(map);
 	
-    L.marker([40.5008, -89.0237]).addTo(mymap)
+    L.marker([40.5008, -89.0237]).addTo(map)
 	         .bindPopup("<b>Midwest Fiber Recycling</b><br />422 White oak Road, Normal IL  61761").openPopup();
     
-    L.marker([40.4965662, -89.0048332]).addTo(mymap)
+    L.marker([40.4965662, -89.0048332]).addTo(map)
 		.bindPopup("<b>Town of Normal Public Works Garage</b><br />1301 Warriner St Normal	61761").openPopup();
         
-    L.marker([40.50652201508486, -88.95289867966522]).addTo(mymap)
+    L.marker([40.50652201508486, -88.95289867966522]).addTo(map)
 		.bindPopup("<b>Best Buy</b><br />2103 N Veterans Parkway, Ste 200 Bloomington	61704").openPopup();
         
-    L.marker([40.515796, -88.9539793]).addTo(mymap)
+    L.marker([40.515796, -88.9539793]).addTo(map)
 		.bindPopup("<b>Land of Lincoln Goodwill</b><br />302 Landmark Dr Normal 61761").openPopup();
         
-    L.marker([40.5015559, -89.0124933]).addTo(mymap)
+    L.marker([40.5015559, -89.0124933]).addTo(map)
 		.bindPopup("<b>Jewel-Osco Drop Off</b><br />901 S Cottge Ave Normal  61761").openPopup();
         
-    L.marker([40.5081085, -88.9793677]).addTo(mymap)
+    L.marker([40.5081085, -88.9793677]).addTo(map)
 		.bindPopup("<b>Chiddix Junior High School</b><br />300 S Walnut St Normal 61761").openPopup();
         
-    L.marker([40.5153969, -88.9496713]).addTo(mymap)
+    L.marker([40.5153969, -88.9496713]).addTo(map)
 		.bindPopup("<b>Wal-Mart Supercenter</b><br />300 Greenbriar Ave Normal  61761").openPopup();
     
-    L.marker([40.5255217, -88.9968487]).addTo(mymap)
+    L.marker([40.5255217, -88.9968487]).addTo(map)
 		.bindPopup("<b>University Center</b><br />1101 N Main St Normal  61761").openPopup();
     
-    L.marker([40.4966579, -89.0014478]).addTo(mymap)
+    L.marker([40.4966579, -89.0014478]).addTo(map)
 		.bindPopup("<b>Team Automotive</b><br />1223 S Adelaid St Normal  61761").openPopup();
         
-    L.marker([40.4985021, -88.9961415]).addTo(mymap)
+    L.marker([40.4985021, -88.9961415]).addTo(map)
 		.bindPopup("<b>AutoZone</b><br />1213 S Center St Normal  61761").openPopup();
         
-    L.marker([40.5323946, -88.9944031]).addTo(mymap)
+    L.marker([40.5323946, -88.9944031]).addTo(map)
 		.bindPopup("<b>Batteries Plus Bulbs</b><br />1715 Bradform Ln Normal 61761").openPopup();
         
-    L.marker([40.49823648169589, -88.99072776963355]).addTo(mymap)
+    L.marker([40.49823648169589, -88.99072776963355]).addTo(map)
 		.bindPopup("<b>Atrium Pharmacy</b><br />1304 Franklin Avenue Normal  61761").openPopup();
         
-    L.marker([40.5022672, -88.9554944]).addTo(mymap)
+    L.marker([40.5022672, -88.9554944]).addTo(map)
 		.bindPopup("<b>Clay Dooley Tire and Auto</b><br />1507 E Vernon	Bloomington	61701").openPopup();
         
-    L.marker([40.4733659, -88.9907934]).addTo(mymap)
+    L.marker([40.4733659, -88.9907934]).addTo(map)
 		.bindPopup("<b>Mission Mart</b><br />301 E Oakland Ave, Bloomington, IL 61701").openPopup();
         
-    L.marker([40.4645397, -88.9859511]).addTo(mymap)
+    L.marker([40.4645397, -88.9859511]).addTo(map)
 		.bindPopup("<b>Morris Tick Recycling</b><br />501 E Stewart St, Bloomington, IL 61701").openPopup();
         
-    L.marker([40.4645397, -88.9867511]).addTo(mymap)
+    L.marker([40.4645397, -88.9867511]).addTo(map)
 		.bindPopup("<b>Behr Iron and Metal</b><br />501 E Stewart St, Bloomington, IL 61701").openPopup();
 
-    L.marker([40.454600,-88.978240]).addTo(mymap)
+    L.marker([40.454600,-88.978240]).addTo(map)
 		.bindPopup("<b>Henson Disposal Recycling</b><br />2148 Tri Lakes Rd, Bloomington, IL 61704").openPopup();
 
-    L.marker([40.4722577,-89.0180029]).addTo(mymap)
+    L.marker([40.4722577,-89.0180029]).addTo(map)
 		.bindPopup("<b>Twin City Wood and Recycling</b><br />1606 W Oakland Ave, Bloomington, IL").openPopup();
 
-    L.marker([40.4800979,-89.0182371]).addTo(mymap)
+    L.marker([40.4800979,-89.0182371]).addTo(map)
 		.bindPopup("<b>Spring Forward Illinois</b><br />107 Caroline St, Bloomington, IL").openPopup();
 
-    L.marker([40.5295214,-89.0598508]).addTo(mymap)
+    L.marker([40.5295214,-89.0598508]).addTo(map)
 		.bindPopup("<b>Yuton Recycling Center</b><br />1528 Mabel Rd, Bloomington, IL").openPopup();
 
     
@@ -114,10 +114,10 @@
 		popup
 			.setLatLng(e.latlng)
 			.setContent("You clicked the map at " + e.latlng.toString())
-			.openOn(mymap);
+			.openOn(map);
 	}
 
-	mymap.on('click', onMapClick);
+	map.on('click', onMapClick);
 	
 
 
@@ -137,25 +137,16 @@
 		e.marker.closePopup()
 	});
 
-	gps.addTo(mymap);
+	gps.addTo(map);
 
 
 
 	
 </script>
 
-<style>
-	
-ul.a {
-  list-style-type: circle;
-}
-
-style {
-width: 75%;
-}
-
+	<style>
 table, th, td {
-border: 1px solid black;
+  border: 1px solid black;
 }
 
 h1 {
@@ -166,12 +157,13 @@ h2 {
 text-allign: center;
 }
 
+</style>
 </head>
 <body>
 
 <h1>Normal, IL</h1>
 	<center>
-<table>
+<table style=”width: 75%”>
    <tr>
 	<th>Material</th>
 	<th>Drop-off Location</th>
@@ -223,7 +215,7 @@ text-allign: center;
 </table>
 
 <h1>Bloomington, IL</h1>
-<table>
+<table style="width: 75%">
    <tr>
 	<th>Material</th>
 	<th>Drop-off Location</th>
@@ -274,13 +266,12 @@ text-allign: center;
    </tr>
 	</center>
 <h3>You might be wondering: Why does this information matter?</h3>
-<p>Knowing the correct places to recycle your used items help our Earth become not only a better place but healthy and more environmentally friendly. You can know how to dispose of products that you might not have thought could be recyclable correctly, via our data table.</p>
+<p>Knowing the correct places to recycle your used items can first handedly help our Earth become not only a better place but healthy and more environmentally friendly. You can know how to dispose of products that you might not have thought could be recyclable correctly, via our data table.</p>
 <p>Recycling can do many beneficial things such as:</p>
-<ul class="a"</ul>
+<ul class=”a”</ul>
    <li>Save energy</li>
    <li>Reduce substantial air and water pollution</li>
    <li>Lessen the need for processing raw materials</li>
    <li>Scale down greenhouse gas emissions that could help save our Earth from the negative effects of climate change</li>
 </ul>
-	</style>
-	</body>
+
