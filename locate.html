@@ -120,7 +120,8 @@
 	mymap.on('click', onMapClick);
 	
 
-mymap.addControl( new L.Control.Gps() );
+var tinnedGps = { lat: 52.5, lng: -2.0 };
+mymap.addControl( new L.Control.Gps( { transform: function(realGps) { return tinnedGps; } ) );
 
 
 	
@@ -197,7 +198,7 @@ text-allign: center;
 </table>
 
 <h1>Bloomington, IL</h1>
-<table style=”width: 75%”>
+<table style="width: 75%">
    <tr>
 	<th>Material</th>
 	<th>Drop-off Location</th>
