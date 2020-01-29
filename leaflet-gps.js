@@ -48,7 +48,7 @@ L.Control.Gps = L.Control.extend({
 			fillOpacity: 1
 		},
 		//accuracy: true,		//show accuracy Circle
-		position: 'topleft',
+		position: 'bottomleft',
 		transform: function(latlng) { return latlng },
 		//TODO add gpsLayer
 		//TODO timeout autoCenter
