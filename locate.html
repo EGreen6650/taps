@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="leaflet-search.css" />
+<link rel="stylesheet" href="leaflet-gps.css" />
 </head>
 <body>
 <div style="sticky"> 
@@ -47,12 +48,12 @@
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/streets-v11'
 	}).addTo(map);
-	
+var data = [
     L.marker([40.5008, -89.0237]).addTo(map)
 	         .bindPopup("<b>Midwest Fiber Recycling</b><br />422 White oak Road, Normal IL  61761").openPopup();
     
     L.marker([40.4965662, -89.0048332]).addTo(map)
-		.bindPopup("<b>Town of Normal Public Works Garage</b><br />1301 Warriner St Normal	61761").openPopup();
+		.bindPopup("<b>Town of Normal Public Works Garage</b><br />1301 Warriner St Normal   61761").openPopup();
         
     L.marker([40.50652201508486, -88.95289867966522]).addTo(map)
 		.bindPopup("<b>Best Buy</b><br />2103 N Veterans Parkway, Ste 200 Bloomington	61704").openPopup();
@@ -107,7 +108,7 @@
 
     L.marker([40.5295214,-89.0598508]).addTo(map)
 		.bindPopup("<b>Yuton Recycling Center</b><br />1528 Mabel Rd, Bloomington, IL").openPopup();
-
+];
     
 
 	var popup = L.popup();
@@ -125,13 +126,25 @@ var markersLayer = new L.LayerGroup();	//layer contain searched elements
 	
 	map.addLayer(markersLayer);
 
-var controlSearch = new L.Control.Search({
+	var controlSearch = new L.Control.Search({
 		position:'topright',		
 		layer: markersLayer,
 		initial: false,
 		zoom: 12,
 		marker: false
 	});
+
+	map.addControl( controlSearch );
+
+	////////////populate map with markers from sample data
+	for(i in data) {
+		var title = data[i].title,	//value searched
+			loc = data[i].loc,		//position found
+			marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
+		marker.bindPopup('title: '+ title );
+		markersLayer.addLayer(marker);
+	}
+
 
 	
 	var gps = new L.Control.Gps({
@@ -285,6 +298,8 @@ text-allign: center;
 	<td>Tires</td>
 	<td>Clay Dooley Automotive</td>
    </tr>
+
+	<endtext>*Some recycling services may charge an additional fee for pickup or dropoff</endtext>
 	</center>
 		
 </body>
