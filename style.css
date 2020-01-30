@@ -22,6 +22,12 @@ position: absolute;
   left: 80px;
 }
 
+endtext {
+position: absolute;
+  top: 5px;
+}
+
+
 .flip-card {
   background-color: transparent;
   width: 300px;
