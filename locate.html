@@ -63,7 +63,7 @@ var data = [
 		{"loc":[40.4985021,-88.9961415], "title":"AutoZone"},
 		{"loc":[40.5323946,-88.9944031], "title":"Batteries Plus Bulbs"},
 		{"loc":[40.49823648169589,-88.99072776963355], "title":"Atrium Pharmacy"},	
-		{"loc":[41.805008,-88.9554944], "title":"Clay Dooley Tire and Auto"},
+		{"loc":[40.5022672,-88.9554944], "title":"Clay Dooley Tire and Auto"},
 		{"loc":[40.4733659,-88.9907934], "title":"Mission Mart"},
 		{"loc":[40.4645397,-88.9859511], "title":"Morris Tick Recycling"},
 		{"loc":[40.4645397,-88.9867511], "title":"Behr Iron and Metal"},
@@ -72,6 +72,7 @@ var data = [
 		{"loc":[40.4800979,-89.0182371], "title":"Spring Forward Illinois"},
 		{"loc":[40.5295214,-89.0598508], "title":"Yuton Recycling Center"},
 ];
+
 
 
     L.marker([40.5008, -89.0237]).addTo(map)
@@ -158,16 +159,7 @@ var markersLayer = new L.LayerGroup();	//layer contain searched elements
 		marker: false
 	});
 
-	map.addControl( controlSearch );
 
-	////////////populate map with markers from sample data
-	for(i in data) {
-		var title = data[i].title,	//value searched
-			loc = data[i].loc,		//position found
-			marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
-		marker.bindPopup('title: '+ title );
-		markersLayer.addLayer(marker);
-	}
 
 
 	
