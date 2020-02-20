@@ -160,7 +160,14 @@ var markersLayer = new L.LayerGroup();	//layer contain searched elements
 
 	map.addControl( controlSearch );
 
-	
+	////////////populate map with markers from sample data
+	for(i in data) {
+		var title = data[i].title,	//value searched
+			loc = data[i].loc,		//position found
+			marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
+		marker.bindPopup('title: '+ title );
+		markersLayer.addLayer(marker);
+	}
 
 
 	
