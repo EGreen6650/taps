@@ -135,14 +135,7 @@ var data = [
 		.bindPopup("<b>Yuton Recycling Center</b><br />1528 Mabel Rd, Bloomington, IL").openPopup();
     
 
-	var popup = L.popup();
 
-	function onMapClick(e) {
-		popup
-			.setLatLng(e.latlng)
-			.setContent("You clicked the map at " + e.latlng.toString())
-			.openOn(map);
-	}
 
 	map.on('click', onMapClick);
 	
@@ -164,8 +157,7 @@ var markersLayer = new L.LayerGroup();	//layer contain searched elements
 	for(i in data) {
 		var title = data[i].title,	//value searched
 			loc = data[i].loc,		//position found
-			
-		markersLayer.addLayer(marker);
+		
 	}
 
 
