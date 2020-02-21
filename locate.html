@@ -162,7 +162,7 @@ var markersLayer = new L.LayerGroup();	//layer contain searched elements
 		markersLayer.addLayer(marker);
 		    }
 
-
+layerVisibility[L.Util.stamp(marker)] = false;
 	
 	var gps = new L.Control.Gps({
 		autoActive:true,
