@@ -124,6 +124,10 @@ color: black;
 font-size: 35px
 }
 
+h3 {
+font-family: Montserrat-Thin; 
+}
+
 div.sticky {
   position: -webkit-sticky;
   position: sticky;
