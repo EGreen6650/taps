@@ -3,7 +3,7 @@ background-color: lightgreen;
 }
 
 p {
-font-family: Montserrat-Regular;
+font-family: Montserrat;
 font-size: 20px;
 }
 
@@ -101,7 +101,7 @@ transform: rotate (90deg)
 }
 h1w {
 text-align: center;
-font-family: Montserrat-Thin, Arial;
+font-family: Montserrat Thin, Arial;
 letter-spacing: 3px;
 color: white;
 font-size: 35px;
@@ -109,7 +109,7 @@ font-size: 35px;
 
 title {
 text-align: center;
-font-family: Montserrat-Bold, Arial;
+font-family: Montserrat Bold, Arial;
 color: black;
 font-size: 35px;
 position: absolute;
@@ -118,14 +118,14 @@ position: absolute;
 
 h1 {
 text-align: center;
-font-family: Montserrat-Thin, Arial;
+font-family: Montserrat Thin, Arial;
 letter-spacing: 3px;
 color: black;
 font-size: 35px
 }
 
 h3 {
-font-family: Montserrat-Thin; 
+font-family: Montserrat Thin; 
 }
 
 div.sticky {
