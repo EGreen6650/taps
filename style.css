@@ -1,5 +1,8 @@
 body {
-background-color: lightgreen;
+background-image: url('bush.png');
+  background-repeat: repeat;
+  background-attachment: fixed;  
+  background-size: cover;
 }
 
 p {
