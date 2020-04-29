@@ -72,7 +72,7 @@ position: absolute;
 }
 
 .homepic {
-transform: rotate(360deg);
+transform: rotate(180deg);
 }
 
 .centeredhome {
