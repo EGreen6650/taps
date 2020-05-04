@@ -119,6 +119,12 @@ position: absolute;
   top: 15px;
 }
 
+pr {
+  font-family: Consolas, Arial;
+ color: red;
+  font-size: 15;
+}
+
 h1 {
 text-align: center;
 font-family: Montserrat Thin, Arial;
